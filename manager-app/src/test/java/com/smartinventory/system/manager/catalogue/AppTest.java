@@ -1,4 +1,4 @@
-package com.smartinventory.system;
+package com.smartinventory.system.manager.catalogue;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

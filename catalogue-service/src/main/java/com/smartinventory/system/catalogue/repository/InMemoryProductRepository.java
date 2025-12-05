@@ -1,10 +1,9 @@
-package com.smartinventory.system.repository;
+package com.smartinventory.system.catalogue.repository;
 
-import com.smartinventory.system.entity.Product;
+import com.smartinventory.system.catalogue.entity.Product;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
-import java.util.stream.IntStream;
 
 @Repository
 public class InMemoryProductRepository implements ProductRepository {

@@ -1,6 +1,6 @@
-package com.smartinventory.system.repository;
+package com.smartinventory.system.catalogue.repository;
 
-import com.smartinventory.system.entity.Product;
+import com.smartinventory.system.catalogue.entity.Product;
 
 import java.util.List;
 import java.util.Optional;

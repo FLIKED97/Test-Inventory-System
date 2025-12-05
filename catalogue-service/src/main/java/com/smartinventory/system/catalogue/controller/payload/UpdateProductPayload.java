@@ -1,4 +1,4 @@
-package com.smartinventory.system.controller.payload;
+package com.smartinventory.system.catalogue.controller.payload;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;

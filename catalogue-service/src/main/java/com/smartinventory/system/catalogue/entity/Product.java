@@ -1,4 +1,4 @@
-package com.smartinventory.system.entity;
+package com.smartinventory.system.catalogue.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

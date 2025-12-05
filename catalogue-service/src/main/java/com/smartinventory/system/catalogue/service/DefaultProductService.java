@@ -1,7 +1,7 @@
-package com.smartinventory.system.service;
+package com.smartinventory.system.catalogue.service;
 
-import com.smartinventory.system.entity.Product;
-import com.smartinventory.system.repository.ProductRepository;
+import com.smartinventory.system.catalogue.entity.Product;
+import com.smartinventory.system.catalogue.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
