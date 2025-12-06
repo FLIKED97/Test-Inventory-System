@@ -27,7 +27,7 @@ public class ProductsRestController {
 
     private final ProductService productService;
 
-    @GetMapping()
+    @GetMapping("list")
     public List<Product> findProducts(){
         return this.productService.findAllProducts();
     }
