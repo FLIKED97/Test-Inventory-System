@@ -1,16 +1,14 @@
 package com.smartinventory.system.catalogue.repository;
 
 import com.smartinventory.system.catalogue.entity.Product;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
-import java.util.List;
-import java.util.Optional;
 
-public interface ProductRepository {
-    List<Product> findAll();
+public interface ProductRepository extends CrudRepository<Product, Integer> {
 
-    Product save(Product product);
-
-    Optional<Product> findById(Integer productId);
-
-    void delete(Integer id);
+//    @Query(value = "select p from Product p where p.title ilike :filter")
+    @Query(name = "Product.findAllByTitleLikeIgnoringCase", nativeQuery = true)
+    Iterable<Product> findAllByTitleLikeIgnoreCase(@Param("filter") String filter);
 }

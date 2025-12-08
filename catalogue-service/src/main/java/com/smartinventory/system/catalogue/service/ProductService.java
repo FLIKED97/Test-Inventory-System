@@ -2,11 +2,10 @@ package com.smartinventory.system.catalogue.service;
 
 import com.smartinventory.system.catalogue.entity.Product;
 
-import java.util.List;
 import java.util.Optional;
 
 public interface ProductService {
-    List<Product> findAllProducts();
+    Iterable<Product> findAllProducts(String filter);
 
     Product createProduct(String title, String details);
 
