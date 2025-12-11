@@ -5,15 +5,18 @@ import com.smartinventory.system.catalogue.entity.Product;
 import com.smartinventory.system.catalogue.service.ProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.MessageSource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.Locale;
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -28,7 +31,11 @@ public class ProductRestController {
     private final MessageSource messageSource;
 
     @ModelAttribute("product")
-    public Product getProduct(@PathVariable("productId") int productId){
+    public Product getProduct(@PathVariable("productId") int productId,
+                              Principal principal){
+//        LoggerFactory.getLogger(ProductRestController.class)
+//                .info("Principal: {}", ((JwtAuthenticationToken)principal).getToken()
+//                        .getClaimAsString("email"));
         return this.productService.findProduct(productId)
                 .orElseThrow(() -> new NoSuchElementException("catalogue.errors.product.not.found"));
     }
