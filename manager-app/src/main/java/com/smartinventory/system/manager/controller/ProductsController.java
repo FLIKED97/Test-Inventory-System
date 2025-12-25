@@ -37,16 +37,13 @@ public class ProductsController {
     @PostMapping("create")
     public String createProduct(NewProductPayload payload,
                                 Model model) {
-
         try {
             Product product = this.productsRestClient.createProduct(payload.title(), payload.details());
             return "redirect:/catalogue/products/%d".formatted(product.id());
-
         } catch (BadRequestException exception){
             model.addAttribute("payload", payload);
             model.addAttribute("errors", exception.getErrors());
             return "catalogue/products/new_product";
         }
     }
-
 }
