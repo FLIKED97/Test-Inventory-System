@@ -9,6 +9,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.restdocs.RestDocumentationExtension;
 import org.springframework.restdocs.operation.preprocess.HeadersModifyingOperationPreprocessor;
+import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlConfig;
 import org.springframework.test.web.servlet.MockMvc;
@@ -42,6 +44,9 @@ class ProductsRestControllerIT {
 
     @Autowired
     MockMvc mockMvc;
+
+    @MockitoBean
+    ClientRegistrationRepository clientRegistrationRepository;
 
     @Test
     @Sql(scripts = "/sql/products.sql", config = @SqlConfig(encoding = "UTF-8"))

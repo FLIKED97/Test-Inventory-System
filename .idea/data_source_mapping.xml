@@ -3,5 +3,6 @@
   <component name="DataSourcePerFileMappings">
     <file url="file://$PROJECT_DIR$/.idea/queries/Query_2.sql" value="c70a6caa-1cce-48bf-a8e5-cf624a7d6abd" />
     <file url="file://$PROJECT_DIR$/.idea/queries/Query_4.sql" value="36154124-66ae-4a84-92b8-d1a5933cb3a2" />
+    <file url="file://$PROJECT_DIR$/catalogue-service/src/test/java/com/smartinventory/system/catalogue/controller/ProductRestControllerIT.java" value="c70a6caa-1cce-48bf-a8e5-cf624a7d6abd" />
   </component>
 </project>

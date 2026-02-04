@@ -1,0 +1,43 @@
+scrape_configs:
+  - job_name: inventory_admin_service
+    static_configs:
+      - targets: ["host.docker.internal:8085"]
+        labels:
+          application: inventory-admin-service
+    metrics_path: /actuator/prometheus
+    oauth2:
+      client_id: victoria-metrics
+      client_secret: WXvo592VRPigLkIGJCXZEFG7dijHtsIP
+      token_url: http://host.docker.internal:8082/realms/inventory-test/protocol/openid-connect/token
+      scopes:
+        - metrics
+      endpoint_params:
+        grant_type: client_credentials
+  - job_name: inventory_catalogue_service
+    static_configs:
+        - targets: [ "host.docker.internal:8081" ]
+          labels:
+            application: inventory-catalogue-service
+    metrics_path: /actuator/prometheus
+    oauth2:
+      client_id: victoria-metrics
+      client_secret: WXvo592VRPigLkIGJCXZEFG7dijHtsIP
+      token_url: http://host.docker.internal:8082/realms/inventory-test/protocol/openid-connect/token
+      scopes:
+        - metrics
+      endpoint_params:
+        grant_type: client_credentials
+  - job_name: inventory_manager_app
+    static_configs:
+          - targets: ["host.docker.internal:8080"]
+            labels:
+              application: inventory-manager-app
+    metrics_path: /actuator/prometheus
+    oauth2:
+        client_id: victoria-metrics
+        client_secret: WXvo592VRPigLkIGJCXZEFG7dijHtsIP
+        token_url: http://host.docker.internal:8082/realms/inventory-test/protocol/openid-connect/token
+        scopes:
+          - metrics
+        endpoint_params:
+          grant_type: client_credentials

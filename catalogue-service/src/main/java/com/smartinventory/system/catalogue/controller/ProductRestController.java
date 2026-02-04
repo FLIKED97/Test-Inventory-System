@@ -31,8 +31,9 @@ public class ProductRestController {
     private final MessageSource messageSource;
 
     @ModelAttribute("product")
-    public Product getProduct(@PathVariable("productId") int productId,
-                              Principal principal){
+    public Product getProduct(@PathVariable("productId") int productId
+                              ){
+        //Principal principal <- в параметри методу
 //        LoggerFactory.getLogger(ProductRestController.class)
 //                .info("Principal: {}", ((JwtAuthenticationToken)principal).getToken()
 //                        .getClaimAsString("email"));
